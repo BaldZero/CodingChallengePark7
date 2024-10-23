@@ -27,7 +27,7 @@ class Challenges
     public static void MainMenu()
     {
         Console.WriteLine("Welcome to my coding challenge program. I will be making a variety of functions for you to use. \nPlease pick one.");
-        Console.WriteLine("\n1. Add two numbers \n2. Convert minuttes to seconds \n3. Add one to a number \n4. Find the circuit power \n5. Convert years to days \n6. Find the area of a triangle \n7. Number less than or greater than Zero. ");
+        Console.WriteLine("\n1. Add two numbers \n2. Convert minuttes to seconds \n3. Add one to a number \n4. Find the circuit power \n5. Convert years to days \n6. Find the area of a triangle \n7. Number less than or greater than Zero \n8. Check if the sum of two numbers is greater tthan or less than 100 ");
         
         var funcSelect = Console.ReadLine();
         Console.Clear();
@@ -65,7 +65,12 @@ class Challenges
 
             var minutes = Console.ReadLine();
             int seconds = 60;
-            float minutesToUse1 = float.Parse(minutes);
+            float minutesToUse1;
+            while (!float.TryParse(minutes, out minutesToUse1))
+            {
+                Console.WriteLine("PICK AN INTEGER YOU FOOL");
+                minutes = Console.ReadLine();
+            }
 
             Console.WriteLine(minutes + " minute(s) is equal to " + Converter(minutesToUse1, seconds) + " seconds.");
 
@@ -117,6 +122,28 @@ class Challenges
             var zeroLess = Console.ReadLine();
             float numberZero = float.Parse(zeroLess);
             Console.WriteLine(LessThanZero(numberZero));
+        }
+        else if(funcSelect == "8")
+        {
+            Console.WriteLine("Today we will see if the sum of a number is less than 100. \nIf it is we will say true and if it isn't we will say false.");
+            var firstNumber = Console.ReadLine();
+            float firstNumberToUse;
+            while (!float.TryParse(firstNumber, out firstNumberToUse))
+            {
+                Console.WriteLine("PICK AN INTEGER YOU FOOL");
+                firstNumber = Console.ReadLine();
+            }
+            Console.WriteLine("Aight, give me another.");
+
+            var secondNumber = Console.ReadLine();
+            float secondNumberToUse;
+            while (!float.TryParse(secondNumber, out secondNumberToUse))
+            {
+                Console.WriteLine("PICK AN INTEGER YOU FOOL");
+                secondNumber = Console.ReadLine();
+            }
+            Console.WriteLine(IsOneHundred(firstNumberToUse, secondNumberToUse));
+
         }
         else
         {
@@ -175,6 +202,17 @@ class Challenges
             return false;
         }
 
+    }
+    public static bool IsOneHundred(float firstNumber, float secondNumber)
+    {
+        if((firstNumber + secondNumber < 100))
+        {
+            return true ;
+        } 
+        else
+        {
+            return false;
+        }
     }
     
 
