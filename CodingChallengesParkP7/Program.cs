@@ -163,7 +163,14 @@ class Challenges
                 Console.WriteLine("PICK AN INTEGER YOU FOOL");
                 equalTwo = Console.ReadLine();
             }
-            Console.WriteLine(IsEqual(firstEqual, secondEqual));
+            if (IsEqual(firstEqual, secondEqual) == true)
+            {
+                Console.WriteLine(equalOne + " and " + equalTwo + " are the same" );
+            }
+            else
+            {
+                Console.WriteLine(equalOne + " and " + equalTwo + " are not the same");
+            }
 
         }
         else
