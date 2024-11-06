@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
 
 class Challenges
@@ -28,7 +30,8 @@ class Challenges
     {
         Console.WriteLine("Welcome to my coding challenge program. I will be making a variety of functions for you to use. \nPlease pick one.");
         Console.WriteLine("\n1. Add two numbers \n2. Convert minuttes to seconds \n3. Add one to a number \n4. Find the circuit power \n5. Convert years to days \n6. Find the area of a triangle " +
-            "\n7. Number less than or greater than Zero \n8. Check if the sum of two numbers is greater tthan or less than 100 \n9. Check if two numbers are equal \n10. Add the phrase 'something' to an argument.");
+            "\n7. Number less than or greater than Zero \n8. Check if the sum of two numbers is greater tthan or less than 100 \n9. Check if two numbers are equal " +
+            "\n10. Add the phrase 'something' to an argument \n11. Give the opposite of true or false.");
         
         var funcSelect = Console.ReadLine();
         Console.Clear();
@@ -180,6 +183,13 @@ class Challenges
             string somethingArgument = Console.ReadLine();
             Console.WriteLine("Something " + somethingArgument);
         }
+        else if(funcSelect == "11")
+        {
+            Console.WriteLine("Today you will be choosing true or false and we will give back the opposite of the function.");
+            string trueOrFalse = Console.ReadLine();
+            Console.WriteLine("The opposite of " + trueOrFalse + " is " + ReverseBool(trueOrFalse));
+
+        }
         else
         {
             Console.WriteLine("Please pick again, the function you are trying to access does not exist yet.");
@@ -261,7 +271,27 @@ class Challenges
             return false;
         }
     }
+    public static string ReverseBool(string trueOrFalse)
+    {
+        
+        string tryAgain;
+        if (trueOrFalse == "true")
+        {
+            return "false" ;
+        }
+        else if (trueOrFalse == "false")
+        {
+            return "true" ;
+        }
+        else 
+        {
+            return "Pick true or false not whatever that is.";
+        }
+        
+        
+        
 
+    }
     
 
 }
