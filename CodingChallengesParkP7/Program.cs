@@ -31,7 +31,7 @@ class Challenges
         Console.WriteLine("Welcome to my coding challenge program. I will be making a variety of functions for you to use. \nPlease pick one.");
         Console.WriteLine("\n1. Add two numbers \n2. Convert minuttes to seconds \n3. Add one to a number \n4. Find the circuit power \n5. Convert years to days \n6. Find the area of a triangle " +
             "\n7. Number less than or greater than Zero \n8. Check if the sum of two numbers is greater tthan or less than 100 \n9. Check if two numbers are equal " +
-            "\n10. Add the phrase 'something' to an argument \n11. Give the opposite of true or false. \n12. Convert hours into seconds.");
+            "\n10. Add the phrase 'something' to an argument \n11. Give the opposite of true or false. \n12. Convert hours into seconds. \n13. Take a polygon and return its sum of internal degrees.");
         
         var funcSelect = Console.ReadLine();
         Console.Clear();
@@ -211,6 +211,29 @@ class Challenges
            
 
         }
+        else if(funcSelect == "13")
+        {
+            Console.WriteLine("Give me a n sided polygon and I will return the sum of internal angles in degrees of the n sided polygon.");
+            var nPolygon = Console.ReadLine();
+            int nSides;
+            while (!int.TryParse(nPolygon, out nSides))
+            {
+                Console.WriteLine("PICK AN INTEGER YOU FOOL");
+                
+                nPolygon = Console.ReadLine();
+            }
+            if (nSides > 2)
+            {
+                Console.WriteLine("A polygon with " + nSides + " sides has an internal angle sum of " + NSidedPolygonAngles(nSides));
+            }
+            else
+            {
+                Console.WriteLine("Please pick a number bigger than 2");
+                
+            }
+
+
+        }
         else
         {
             Console.WriteLine("Please pick again, the function you are trying to access does not exist yet.");
@@ -318,5 +341,8 @@ class Challenges
         return secHours * 3600;
     }
     
-
+    public static int NSidedPolygonAngles(int nPolygon)
+    {
+        return (nPolygon - 2) * 180;
+    }
 }
