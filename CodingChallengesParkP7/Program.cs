@@ -32,7 +32,7 @@ class Challenges
         Console.WriteLine("\n1. Add two numbers \n2. Convert minuttes to seconds \n3. Add one to a number \n4. Find the circuit power \n5. Convert years to days \n6. Find the area of a triangle " +
             "\n7. Number less than or greater than Zero \n8. Check if the sum of two numbers is greater tthan or less than 100 \n9. Check if two numbers are equal " +
             "\n10. Add the phrase 'something' to an argument \n11. Give the opposite of true or false. \n12. Convert hours into seconds. \n13. Take a polygon and return its sum of internal degrees." +
-            "\n14. Take a string and add Edabit \n15. True and True");
+            "\n14. Take a string and add Edabit \n15. True and True. \n16. Find the amount of points a basketball player scored.");
         
         var funcSelect = Console.ReadLine();
         Console.Clear();
@@ -270,6 +270,30 @@ class Challenges
             }
             
             Console.WriteLine("And(" + aTrue +", " + bTrue + ") -> " + And(aTrue, bTrue));
+            
+
+        }
+        else if (funcSelect == "16")
+        {
+            Console.WriteLine("Today we will calculate how many points a basketball player scored based on the number of 3-pointers dn 2-pointers they sccored.\nGive me the number of 3-pointers they scored.");
+            var threePointers = Console.ReadLine();
+            int threePoints;
+            while (!int.TryParse(threePointers, out threePoints))
+            {
+                Console.WriteLine("PICK AN INTEGER YOU FOOL");
+
+                threePointers = Console.ReadLine();
+            }
+            Console.WriteLine("Got it! Give me the amount of 2-pointers now please.");
+            var twoPointers = Console.ReadLine();
+            int twoPoints;
+            while (!int.TryParse(twoPointers, out twoPoints))
+            {
+                Console.WriteLine("PICK AN INTEGER YOU FOOL");
+
+                twoPointers = Console.ReadLine();
+            }
+            Console.WriteLine("points(" + threePointers + ", " + twoPointers + ") -> " + Points(threePoints, twoPoints));
 
         }
         else
@@ -394,5 +418,10 @@ class Challenges
         {
             return false ;
         }
+    }
+
+    public static int Points(int threePointers, int twoPointers)
+    {
+        return (threePointers * 3) + (twoPointers * 2);
     }
 }
