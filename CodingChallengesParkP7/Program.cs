@@ -32,7 +32,7 @@ class Challenges
         Console.WriteLine("\n1. Add two numbers \n2. Convert minuttes to seconds \n3. Add one to a number \n4. Find the circuit power \n5. Convert years to days \n6. Find the area of a triangle " +
             "\n7. Number less than or greater than Zero \n8. Check if the sum of two numbers is greater tthan or less than 100 \n9. Check if two numbers are equal " +
             "\n10. Add the phrase 'something' to an argument \n11. Give the opposite of true or false. \n12. Convert hours into seconds. \n13. Take a polygon and return its sum of internal degrees." +
-            "\n14. Take a string and add Edabit \n15. True and True. \n16. Find the amount of points a basketball player scored.");
+            "\n14. Take a string and add Edabit \n15. True and True. \n16. Find the amount of points a basketball player scored. \n17. Find the perimeter of a rectangle.");
         
         var funcSelect = Console.ReadLine();
         Console.Clear();
@@ -46,7 +46,7 @@ class Challenges
 
             var number1 = Console.ReadLine();
             float numberToUse1;
-            while(!float.TryParse(number1, out numberToUse1))
+            while (!float.TryParse(number1, out numberToUse1))
             {
                 Console.WriteLine("PICK AN INTEGER YOU FOOL");
                 number1 = Console.ReadLine();
@@ -128,7 +128,7 @@ class Challenges
             float numberZero = float.Parse(zeroLess);
             Console.WriteLine(LessThanZero(numberZero));
         }
-        else if(funcSelect == "8")
+        else if (funcSelect == "8")
         {
             Console.WriteLine("Today we will see if the sum of a number is less than 100. \nIf it is we will say true and if it isn't we will say false.");
             var firstNumber = Console.ReadLine();
@@ -150,7 +150,7 @@ class Challenges
             Console.WriteLine(IsOneHundred(firstNumberToUse, secondNumberToUse));
 
         }
-        else if(funcSelect == "9")
+        else if (funcSelect == "9")
         {
             Console.WriteLine("Today we will see if two numbers are the same. \nIf they are the same we will say true and not we will say false. \nPlease give me a number.");
             var equalOne = Console.ReadLine();
@@ -170,7 +170,7 @@ class Challenges
             }
             if (IsEqual(firstEqual, secondEqual) == true)
             {
-                Console.WriteLine(equalOne + " and " + equalTwo + " are the same" );
+                Console.WriteLine(equalOne + " and " + equalTwo + " are the same");
             }
             else
             {
@@ -184,14 +184,14 @@ class Challenges
             string somethingArgument = Console.ReadLine();
             Console.WriteLine("Something " + somethingArgument);
         }
-        else if(funcSelect == "11")
+        else if (funcSelect == "11")
         {
             Console.WriteLine("Today you will be choosing true or false and we will give back the opposite of the function.");
             string trueOrFalse = Console.ReadLine();
             Console.WriteLine("The opposite of " + trueOrFalse + " is " + ReverseBool(trueOrFalse));
 
         }
-        else if(funcSelect == "12")
+        else if (funcSelect == "12")
         {
             Console.WriteLine("Today we shall convert hours into seconds. Please give me a number of hour(s)");
             var secHours = Console.ReadLine();
@@ -209,10 +209,10 @@ class Challenges
             {
                 Console.WriteLine(secHours + " hours is equal to " + HoursIntoSeconds(hourSecs));
             }
-           
+
 
         }
-        else if(funcSelect == "13")
+        else if (funcSelect == "13")
         {
             Console.WriteLine("Give me a n sided polygon and I will return the sum of internal angles in degrees of the n sided polygon.");
             var nPolygon = Console.ReadLine();
@@ -220,7 +220,7 @@ class Challenges
             while (!int.TryParse(nPolygon, out nSides))
             {
                 Console.WriteLine("PICK AN INTEGER YOU FOOL");
-                
+
                 nPolygon = Console.ReadLine();
             }
             if (nSides > 2)
@@ -230,47 +230,47 @@ class Challenges
             else
             {
                 Console.WriteLine("Please pick a number bigger than 2");
-                
+
             }
 
 
 
         }
-        else if(funcSelect == "14")
+        else if (funcSelect == "14")
         {
             Console.WriteLine("Today we will be taking a sting and adding the word Edabit to it. Please give me a string");
-                string passString = Console.ReadLine();
+            string passString = Console.ReadLine();
             var result = passString + "Edabit";
             Console.WriteLine(result);
         }
-        else if(funcSelect == "15")
+        else if (funcSelect == "15")
         {
             bool aTrue;
             bool bTrue;
             Console.WriteLine("Today I will be taking two vvalues and checking if they are both true. if they are I will return true.\nGive me true or false.");
             string trueA = Console.ReadLine();
-            if(trueA == "true")
+            if (trueA == "true")
             {
                 aTrue = true;
             }
-            else 
+            else
             {
-                aTrue= false;
+                aTrue = false;
             }
-            
+
             Console.WriteLine("Give me another value of true or false");
             string trueB = Console.ReadLine();
-            if(trueB == "true")
+            if (trueB == "true")
             {
                 bTrue = true;
             }
-            else 
+            else
             {
                 bTrue = false;
             }
-            
-            Console.WriteLine("And(" + aTrue +", " + bTrue + ") -> " + And(aTrue, bTrue));
-            
+
+            Console.WriteLine("And(" + aTrue + ", " + bTrue + ") -> " + And(aTrue, bTrue));
+
 
         }
         else if (funcSelect == "16")
@@ -294,6 +294,29 @@ class Challenges
                 twoPointers = Console.ReadLine();
             }
             Console.WriteLine("points(" + threePointers + ", " + twoPointers + ") -> " + Points(threePoints, twoPoints));
+
+        }
+        else if (funcSelect == "17")
+        {
+            Console.WriteLine("Today we will find the perimeter of a rectangle.\nPlease give me a width.");
+            var width = Console.ReadLine();
+            float rectWidth;
+            while (!float.TryParse(width, out rectWidth))
+            {
+                Console.WriteLine("PICK AN NUMBER YOU FOOL");
+
+                width = Console.ReadLine();
+            }
+            Console.WriteLine("Got it, give me a length now.");
+            var length = Console.ReadLine();
+            float rectLength;
+            while (!float.TryParse(length, out rectLength))
+            {
+                Console.WriteLine("PICK AN NUMBER YOU FOOL");
+
+                length = Console.ReadLine();
+            }
+            Console.WriteLine("RectPerimeter(" + length +"," + width +") -> " + RectPerimeter(rectLength, rectWidth));
 
         }
         else
@@ -423,5 +446,9 @@ class Challenges
     public static int Points(int threePointers, int twoPointers)
     {
         return (threePointers * 3) + (twoPointers * 2);
+    }
+    public static float RectPerimeter(float length, float width)
+    {
+        return (length * 2) + (width * 2);
     }
 }
