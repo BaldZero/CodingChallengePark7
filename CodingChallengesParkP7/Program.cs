@@ -319,6 +319,12 @@ class Challenges
             Console.WriteLine("RectPerimeter(" + length +"," + width +") -> " + RectPerimeter(rectLength, rectWidth));
 
         }
+        else if(funcSelect == "18")
+        {
+            Console.WriteLine("Yo, today we gonna be taking a name as a string and then saying hello.\nGive me someone's name.");
+            string someonesName = Console.ReadLine();
+            Console.WriteLine(HelloName(someonesName));
+        }
         else
         {
             Console.WriteLine("Please pick again, the function you are trying to access does not exist yet.");
@@ -450,5 +456,10 @@ class Challenges
     public static float RectPerimeter(float length, float width)
     {
         return (length * 2) + (width * 2);
+    }
+
+    public static string HelloName(string someonesName)
+    {
+        return "Hello " + someonesName + "!";
     }
 }
