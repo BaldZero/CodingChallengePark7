@@ -30,9 +30,9 @@ class Challenges
     {
         Console.WriteLine("Welcome to my coding challenge program. I will be making a variety of functions for you to use. \nPlease pick one.");
         Console.WriteLine("\n1. Add two numbers \n2. Convert minuttes to seconds \n3. Add one to a number \n4. Find the circuit power \n5. Convert years to days \n6. Find the area of a triangle " +
-            "\n7. Number less than or greater than Zero \n8. Check if the sum of two numbers is greater tthan or less than 100 \n9. Check if two numbers are equal " +
+            "\n7. Number less than or greater than Zero \n8. Check if the sum of two numbers is greater than or less than 100 \n9. Check if two numbers are equal " +
             "\n10. Add the phrase 'something' to an argument \n11. Give the opposite of true or false. \n12. Convert hours into seconds. \n13. Take a polygon and return its sum of internal degrees." +
-            "\n14. Take a string and add Edabit \n15. True and True. \n16. Find the amount of points a basketball player scored. \n17. Find the perimeter of a rectangle.");
+            "\n14. Take a string and add Edabit \n15. True and True. \n16. Find the amount of points a basketball player scored. \n17. Find the perimeter of a rectangle.\n18. Hello + Name\n19. Animal Legs" );
         
         var funcSelect = Console.ReadLine();
         Console.Clear();
@@ -325,6 +325,37 @@ class Challenges
             string someonesName = Console.ReadLine();
             Console.WriteLine(HelloName(someonesName));
         }
+        else if(funcSelect == "19")
+        {
+            Console.WriteLine("Yo, today you are going to tell us how many animals there are and we will tell you the number of legs.\nHow many chickens?");
+            var chickens = Console.ReadLine();
+            float chickenLegs;
+            while (!float.TryParse(chickens, out chickenLegs))
+            {
+                Console.WriteLine("PICK AN NUMBER YOU FOOL");
+
+                chickens = Console.ReadLine();
+            }
+            Console.WriteLine("Alright, now how many cows?");
+            var cows = Console.ReadLine();
+            float cowLegs;
+            while (!float.TryParse(cows, out cowLegs))
+            {
+                Console.WriteLine("PICK AN NUMBER YOU FOOL");
+
+                cows = Console.ReadLine();
+            }
+            Console.WriteLine("Alright, now give us the number of pigs");
+            var pigs = Console.ReadLine();
+            float pigLegs;
+            while (!float.TryParse(pigs, out pigLegs))
+            {
+                Console.WriteLine("PICK AN NUMBER YOU FOOL");
+
+                pigs = Console.ReadLine();
+            }
+            Console.WriteLine("AnimalLegs(" + chickens + ", " + cows + ", " + pigs + ") -> " + AnimalLegs(chickenLegs, cowLegs, pigLegs));
+        }
         else
         {
             Console.WriteLine("Please pick again, the function you are trying to access does not exist yet.");
@@ -461,5 +492,10 @@ class Challenges
     public static string HelloName(string someonesName)
     {
         return "Hello " + someonesName + "!";
+    }
+
+    public static float AnimalLegs(float chickens, float cows, float pigs)
+    {
+        return (chickens * 2) + (cows * 4) + (pigs* 4);
     }
 }
