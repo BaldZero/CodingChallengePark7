@@ -354,6 +354,27 @@ class Challenges
 
                 pigs = Console.ReadLine();
             }
+            if (chickenLegs < 0)
+            {
+
+                Console.WriteLine("Please try again.");
+                MainMenu();
+                
+            }
+            else if (cowLegs < 0)
+            {
+
+                Console.WriteLine("Please try again.");
+                MainMenu();
+                
+            }
+            else if (pigLegs < 0)
+            {
+
+                Console.WriteLine("Please try again.");
+                MainMenu();
+                
+            }
             Console.WriteLine("AnimalLegs(" + chickens + ", " + cows + ", " + pigs + ") -> " + AnimalLegs(chickenLegs, cowLegs, pigLegs));
         }
         else
@@ -496,6 +517,8 @@ class Challenges
 
     public static float AnimalLegs(float chickens, float cows, float pigs)
     {
-        return (chickens * 2) + (cows * 4) + (pigs* 4);
+        
+            
+            return (chickens * 2) + (cows * 4) + (pigs* 4);
     }
 }
