@@ -32,7 +32,8 @@ class Challenges
         Console.WriteLine("\n1. Add two numbers \n2. Convert minuttes to seconds \n3. Add one to a number \n4. Find the circuit power \n5. Convert years to days \n6. Find the area of a triangle " +
             "\n7. Number less than or greater than Zero \n8. Check if the sum of two numbers is greater than or less than 100 \n9. Check if two numbers are equal " +
             "\n10. Add the phrase 'something' to an argument \n11. Give the opposite of true or false. \n12. Convert hours into seconds. \n13. Take a polygon and return its sum of internal degrees." +
-            "\n14. Take a string and add Edabit \n15. True and True. \n16. Find the amount of points a basketball player scored. \n17. Find the perimeter of a rectangle.\n18. Hello + Name\n19. Animal Legs" );
+            "\n14. Take a string and add Edabit \n15. True and True. \n16. Find the amount of points a basketball player scored. \n17. Find the perimeter of a rectangle.\n18. Hello + Name\n19. Animal Legs" +
+            "\n20. How many points?" );
         
         var funcSelect = Console.ReadLine();
         Console.Clear();
@@ -377,6 +378,37 @@ class Challenges
             }
             Console.WriteLine("AnimalLegs(" + chickens + ", " + cows + ", " + pigs + ") -> " + AnimalLegs(chickenLegs, cowLegs, pigLegs));
         }
+        else if(funcSelect == "20")
+        {
+            Console.WriteLine("Today we will get the number of wins, losses, and draws and calculate the number of points a football team has.\n How many wins?");
+            var wins = Console.ReadLine();
+            int winPoints;
+            while (!int.TryParse(wins, out winPoints))
+            {
+                Console.WriteLine("PICK AN NUMBER YOU FOOL");
+
+                wins = Console.ReadLine();
+            }
+            Console.WriteLine("Now how many draws?");
+            var draws = Console.ReadLine();
+            int drawsPoints;
+            while (!int.TryParse(draws, out drawsPoints))
+            {
+                Console.WriteLine("PICK AN NUMBER YOU FOOL");
+
+                draws = Console.ReadLine();
+            }
+            Console.WriteLine("Now how many losses?");
+            var losses = Console.ReadLine();
+            int lossesPoints;
+            while (!int.TryParse(losses, out lossesPoints))
+            {
+                Console.WriteLine("PICK AN NUMBER YOU FOOL");
+
+                losses = Console.ReadLine();
+            }
+            Console.WriteLine("FootballPoints(" + winPoints + ", " + drawsPoints + ", " + lossesPoints + ") -> " + FootBallPoints(winPoints, drawsPoints)); 
+        }
         else
         {
             Console.WriteLine("Please pick again, the function you are trying to access does not exist yet.");
@@ -521,4 +553,17 @@ class Challenges
             
             return (chickens * 2) + (cows * 4) + (pigs* 4);
     }
+    public static int FootBallPoints(int wins, int draws)
+    {
+        if (wins < 0)
+        {
+            wins = 0;
+        }
+        if (draws < 0)
+        {
+            draws = 0;
+        }
+        return (wins * 3) + (draws);
+    }
+
 }
