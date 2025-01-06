@@ -33,7 +33,7 @@ class Challenges
             "\n7. Number less than or greater than Zero \n8. Check if the sum of two numbers is greater than or less than 100 \n9. Check if two numbers are equal " +
             "\n10. Add the phrase 'something' to an argument \n11. Give the opposite of true or false. \n12. Convert hours into seconds. \n13. Take a polygon and return its sum of internal degrees." +
             "\n14. Take a string and add Edabit \n15. True and True. \n16. Find the amount of points a basketball player scored. \n17. Find the perimeter of a rectangle.\n18. Hello + Name\n19. Animal Legs" +
-            "\n20. How many points?" );
+            "\n20. How many points?\n21. What Month?" );
         
         var funcSelect = Console.ReadLine();
         Console.Clear();
@@ -409,6 +409,73 @@ class Challenges
             }
             Console.WriteLine("FootballPoints(" + winPoints + ", " + drawsPoints + ", " + lossesPoints + ") -> " + FootBallPoints(winPoints, drawsPoints)); 
         }
+        else if(funcSelect == "21")
+        {
+            Console.WriteLine("Today we are going to take a number that corresponds with a month.");
+            var month = Console.ReadLine();
+            int monthNum = int.Parse(month);
+            while(monthNum > 12 || monthNum < 1)
+            {
+                Console.WriteLine("Please try again. There are only 12 months in a year.");
+                monthNum = int.Parse(Console.ReadLine());
+            }
+            if (monthNum == 1)
+            {
+                Console.WriteLine("January");
+            }
+            else if (monthNum == 2)
+            {
+                Console.WriteLine("Febuary");
+            }
+            else if (monthNum == 3)
+            {
+                Console.WriteLine("March");
+            }
+            else if (monthNum == 4) 
+            {
+                Console.WriteLine("April");
+            }
+            else if(monthNum == 5)
+            {
+                Console.WriteLine("May");
+            }
+            else if(monthNum == 6)
+            {
+                Console.WriteLine("June");
+            }
+            else if (monthNum == 7)
+            {
+                Console.WriteLine("July");
+            }
+            else if( monthNum == 8)
+            {
+                Console.WriteLine("August");
+            }
+            else if(monthNum == 9)
+            {
+                Console.WriteLine("September");
+
+            }
+            else if (monthNum == 10)
+            {
+                Console.WriteLine("October");
+            }
+            else if(monthNum == 11)
+            {
+                Console.WriteLine("November");
+            }
+            else if(monthNum == 12)
+            {
+                Console.WriteLine("December");
+            }
+            else
+            {
+                Console.WriteLine("There are only 12 months. Please try again.");
+
+            }
+
+
+        }
         else
         {
             Console.WriteLine("Please pick again, the function you are trying to access does not exist yet.");
@@ -417,7 +484,6 @@ class Challenges
             Console.Clear();
             MainMenu();
         }
-        
 
         Console.WriteLine("Press any buttton to go back to the main menu");
         var clearConsole = Console.ReadLine();
@@ -506,10 +572,6 @@ class Challenges
         {
             return "Pick true or false not whatever that is.";
         }
-        
-        
-        
-
     }
     public static float HoursIntoSeconds(float secHours)
     {
@@ -565,5 +627,5 @@ class Challenges
         }
         return (wins * 3) + (draws);
     }
-
+    
 }
