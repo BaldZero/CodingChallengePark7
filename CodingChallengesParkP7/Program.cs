@@ -33,7 +33,7 @@ class Challenges
             "\n7. Number less than or greater than Zero \n8. Check if the sum of two numbers is greater than or less than 100 \n9. Check if two numbers are equal " +
             "\n10. Add the phrase 'something' to an argument \n11. Give the opposite of true or false. \n12. Convert hours into seconds. \n13. Take a polygon and return its sum of internal degrees." +
             "\n14. Take a string and add Edabit \n15. True and True. \n16. Find the amount of points a basketball player scored. \n17. Find the perimeter of a rectangle.\n18. Hello + Name\n19. Animal Legs" +
-            "\n20. How many points?\n21. What Month?" );
+            "\n20. How many points?\n21. What Month? \n22. Min and Max" );
         
         var funcSelect = Console.ReadLine();
         Console.Clear();
@@ -476,6 +476,21 @@ class Challenges
 
 
         }
+        else if(funcSelect == "22")
+        {
+            Console.WriteLine("Yo, give me an array of numbers and i'll give you the max and min of numbers. \nFirst give me how many numbers you want to input");
+            int numberInput = int.Parse(Console.ReadLine());
+            int[] numberArray = new int[numberInput];
+            Console.WriteLine("Now enter all the numbers you want.");
+            for (int i =0; i < numberInput; i++)
+            {
+                numberArray[i] = int.Parse(Console.ReadLine());
+                Console.WriteLine("Please enter the next number");
+            }
+            Console.WriteLine("The minimum and maximum for this array are [" + numberArray.Min() + ", " + numberArray.Max() + "]");
+           
+
+        }
         else
         {
             Console.WriteLine("Please pick again, the function you are trying to access does not exist yet.");
@@ -627,5 +642,6 @@ class Challenges
         }
         return (wins * 3) + (draws);
     }
+    
     
 }
