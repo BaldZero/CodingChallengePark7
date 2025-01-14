@@ -33,7 +33,7 @@ class Challenges
             "\n7. Number less than or greater than Zero \n8. Check if the sum of two numbers is greater than or less than 100 \n9. Check if two numbers are equal " +
             "\n10. Add the phrase 'something' to an argument \n11. Give the opposite of true or false. \n12. Convert hours into seconds. \n13. Take a polygon and return its sum of internal degrees." +
             "\n14. Take a string and add Edabit \n15. True and True. \n16. Find the amount of points a basketball player scored. \n17. Find the perimeter of a rectangle.\n18. Hello + Name\n19. Animal Legs" +
-            "\n20. How many points?\n21. What Month? \n22. Min and Max \n23. Absolute Value Sum"  );
+            "\n20. How many points?\n21. What Month? \n22. Min and Max \n23. Absolute Value Sum \n24. Exponents"  );
         
         var funcSelect = Console.ReadLine();
         Console.Clear();
@@ -512,6 +512,29 @@ class Challenges
             Console.WriteLine("The sum of the absolute values of the numbers in the array is " + absoluteSum);
 
         }
+        else if(funcSelect == "24")
+        {
+            Console.WriteLine("Today we will use exponents to make very big numbers.\nFirst give us the base number.");
+            var baseNum = Console.ReadLine();
+            float baseN;
+            while (!float.TryParse(baseNum, out baseN))
+            {
+                Console.WriteLine("PICK AN NUMBER YOU FOOL");
+
+                baseNum = Console.ReadLine();
+            }
+            Console.WriteLine("Ok, now give us the exponent for this equation.");
+            var expoNum = Console.ReadLine();
+            float expoN;
+            while (!float.TryParse(expoNum, out expoN))
+            {
+                Console.WriteLine("PICK AN NUMBER YOU FOOL");
+
+                expoNum = Console.ReadLine();
+            }
+            Console.WriteLine(baseN + " raised to the power of " + expoN + " is " + ExponentNumbers(baseN, expoN));
+
+        }
         else
         {
             Console.WriteLine("Please pick again, the function you are trying to access does not exist yet.");
@@ -664,7 +687,10 @@ class Challenges
         return (wins * 3) + (draws);
     }
 
-
+    public static float ExponentNumbers(float baseNum, float expoNum)
+    {
+        return MathF.Pow(baseNum, expoNum);
+    }
     
     
 }
