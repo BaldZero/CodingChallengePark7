@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 
 class Challenges
 {
@@ -33,7 +34,7 @@ class Challenges
             "\n7. Number less than or greater than Zero \n8. Check if the sum of two numbers is greater than or less than 100 \n9. Check if two numbers are equal " +
             "\n10. Add the phrase 'something' to an argument \n11. Give the opposite of true or false. \n12. Convert hours into seconds. \n13. Take a polygon and return its sum of internal degrees." +
             "\n14. Take a string and add Edabit \n15. True and True. \n16. Find the amount of points a basketball player scored. \n17. Find the perimeter of a rectangle.\n18. Hello + Name\n19. Animal Legs" +
-            "\n20. How many points?\n21. What Month? \n22. Min and Max \n23. Absolute Value Sum \n24. Exponents \n25. Array Length Multiples"  );
+            "\n20. How many points?\n21. What Month? \n22. Min and Max \n23. Absolute Value Sum \n24. Exponents \n25. Array Length Multiples \n26. Hamming Distance"  );
         
         var funcSelect = Console.ReadLine();
         Console.Clear();
@@ -553,6 +554,14 @@ class Challenges
             
 
         }
+        else if(funcSelect == "26")
+        {
+            Console.WriteLine("Today we will take two string inputs and find how many differences there are between them.\nGive us the first string input.");
+            string diff1 = Console.ReadLine();
+            Console.WriteLine("Perfect, now give us the second string input.");
+            string diff2 = Console.ReadLine();
+            Console.WriteLine("There are " + HammingDistance(diff1, diff2) + " differences") ;
+        }
         else
         {
             Console.WriteLine("Please pick again, the function you are trying to access does not exist yet.");
@@ -709,7 +718,32 @@ class Challenges
     {
         return MathF.Pow(baseNum, expoNum);
     }
+    public static string HammingDistance(string diff1, string diff2)
+    {
 
+        int diffCount = 0;
+        if(diff1.Length == 0)
+        {
+            diffCount = diff2.Length;
+        }
+        else if(diff2.Length == 0)
+        {
+            diffCount = diff1.Length;
+        }
+        else
+        {
+            for (int i = 0; i < diff1.Length; i++)
+            {
+                if (diff1[i] != diff2[i])
+                {
+                    diffCount++;
+                }
+            }
+        }
+
+        
+        return diffCount.ToString();
+    }
 
     
     
