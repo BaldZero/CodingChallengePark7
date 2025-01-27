@@ -570,6 +570,30 @@ class Challenges
             Console.WriteLine(nameSwitch + " is " + switchName[1] +" " + switchName[0] + " when reversed.");
 
         }
+
+        else if (funcSelect == "28")
+        {
+            Console.WriteLine("Today we will be taking two numbers and returning the smaller number.\nGive me the first number");
+            var min1 = Console.ReadLine();
+            float minUno;
+            while (!float.TryParse(min1, out minUno))
+            {
+                Console.WriteLine("PICK AN NUMBER YOU FOOL");
+
+                min1 = Console.ReadLine();
+            }
+            Console.WriteLine("Now give me the other number.");
+            var min2 = Console.ReadLine();
+            float minDos;
+            while (!float.TryParse(min2, out minDos))
+            {
+                Console.WriteLine("PICK AN NUMBER YOU FOOL");
+
+                min2 = Console.ReadLine();
+            }
+            float[] minArray = [minUno, minDos];
+            Console.WriteLine("The smaller number is " + minArray.Min());
+        }
         else
         {
             Console.WriteLine("Please pick again, the function you are trying to access does not exist yet.");
@@ -752,6 +776,7 @@ class Challenges
         
         return diffCount.ToString();
     }
+    
 
     
     
