@@ -34,7 +34,8 @@ class Challenges
             "\n7. Number less than or greater than Zero \n8. Check if the sum of two numbers is greater than or less than 100 \n9. Check if two numbers are equal " +
             "\n10. Add the phrase 'something' to an argument \n11. Give the opposite of true or false. \n12. Convert hours into seconds. \n13. Take a polygon and return its sum of internal degrees." +
             "\n14. Take a string and add Edabit \n15. True and True. \n16. Find the amount of points a basketball player scored. \n17. Find the perimeter of a rectangle.\n18. Hello + Name\n19. Animal Legs" +
-            "\n20. How many points?\n21. What Month? \n22. Min and Max \n23. Absolute Value Sum \n24. Exponents \n25. Array Length Multiples \n26. Hamming Distance\n27. Switch Last and First Names."  );
+            "\n20. How many points?\n21. What Month? \n22. Min and Max \n23. Absolute Value Sum \n24. Exponents \n25. Array Length Multiples \n26. Hamming Distance\n27. Switch Last and First Names." +
+            "\n28. The Smaller Number"  );
         
         var funcSelect = Console.ReadLine();
         Console.Clear();
