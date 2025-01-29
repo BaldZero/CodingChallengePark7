@@ -35,7 +35,7 @@ class Challenges
             "\n10. Add the phrase 'something' to an argument \n11. Give the opposite of true or false. \n12. Convert hours into seconds. \n13. Take a polygon and return its sum of internal degrees." +
             "\n14. Take a string and add Edabit \n15. True and True. \n16. Find the amount of points a basketball player scored. \n17. Find the perimeter of a rectangle.\n18. Hello + Name\n19. Animal Legs" +
             "\n20. How many points?\n21. What Month? \n22. Min and Max \n23. Absolute Value Sum \n24. Exponents \n25. Array Length Multiples \n26. Hamming Distance\n27. Switch Last and First Names." +
-            "\n28. The Smaller Number"  );
+            "\n28. The Smaller Number \n29.Factorials"  );
         
         var funcSelect = Console.ReadLine();
         Console.Clear();
@@ -595,6 +595,21 @@ class Challenges
             float[] minArray = [minUno, minDos];
             Console.WriteLine("The smaller number is " + minArray.Min());
         }
+        else if (funcSelect == "29")
+        {
+            Console.WriteLine("Today we will be taking an integer and returning the factorial.\nPlease give me the integer");
+            var factorInt = Console.ReadLine();
+            int intFactor;
+            
+            while (!int.TryParse(factorInt, out intFactor))
+            {
+                Console.WriteLine("PICK AN NUMBER YOU FOOL");
+
+                factorInt = Console.ReadLine();
+            }
+            Console.WriteLine("The Factorial of " + intFactor + " is " + Factorial(intFactor));
+
+        }
         else
         {
             Console.WriteLine("Please pick again, the function you are trying to access does not exist yet.");
@@ -776,6 +791,18 @@ class Challenges
 
         
         return diffCount.ToString();
+    }
+
+    public static int Factorial(int intFactor)
+    {
+        if(intFactor == 0)
+        {
+            return 1;
+        }
+        else
+        {
+            return intFactor *= Factorial(intFactor - 1);
+        }
     }
     
 
