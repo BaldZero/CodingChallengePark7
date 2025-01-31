@@ -35,7 +35,7 @@ class Challenges
             "\n10. Add the phrase 'something' to an argument \n11. Give the opposite of true or false. \n12. Convert hours into seconds. \n13. Take a polygon and return its sum of internal degrees." +
             "\n14. Take a string and add Edabit \n15. True and True. \n16. Find the amount of points a basketball player scored. \n17. Find the perimeter of a rectangle.\n18. Hello + Name\n19. Animal Legs" +
             "\n20. How many points?\n21. What Month? \n22. Min and Max \n23. Absolute Value Sum \n24. Exponents \n25. Array Length Multiples \n26. Hamming Distance\n27. Switch Last and First Names." +
-            "\n28. The Smaller Number \n29.Factorials"  );
+            "\n28. The Smaller Number \n29.Factorials \n30. Vowel Count"  );
         
         var funcSelect = Console.ReadLine();
         Console.Clear();
@@ -610,6 +610,13 @@ class Challenges
             Console.WriteLine("The Factorial of " + intFactor + " is " + Factorial(intFactor));
 
         }
+        else if(funcSelect == "30")
+        {
+            Console.WriteLine("Today we will take a string and return how many vowels there are. \nGive me the string.");
+            string vowelString = Console.ReadLine();
+            Console.WriteLine("There are " + CountVowels(vowelString) + " vowels");
+
+        }
         else
         {
             Console.WriteLine("Please pick again, the function you are trying to access does not exist yet.");
@@ -803,6 +810,43 @@ class Challenges
         {
             return intFactor *= Factorial(intFactor - 1);
         }
+    }
+    public static string CountVowels(string vowel)
+    {
+        int vowelCount = 0;
+        string vowelA = "a";
+        string vowelE = "e";
+        string vowelI = "i";
+        string vowelO = "o";
+        string vowelU = "u";
+
+        for(int i = 0;i < vowel.Length; i++)
+        {
+            if (vowel[i].ToString() == vowelA)
+            {
+                vowelCount++;
+            }
+            else if (vowel[i].ToString() == vowelE)
+            {
+                vowelCount++;
+            }
+            else if (vowel[i].ToString() == vowelI)
+            {
+                vowelCount++;
+            }
+            else if (vowel[i].ToString() == vowelO)
+            {
+                vowelCount++;
+            }
+            else if (vowel[i].ToString() == vowelU)
+            {
+                vowelCount++;
+            }
+        }
+
+        return vowelCount.ToString();
+        
+        
     }
     
 
